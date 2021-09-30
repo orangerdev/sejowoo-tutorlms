@@ -93,4 +93,15 @@ function run_sejowoo_tutorlms() {
 	$plugin->run();
 
 }
+
+require_once(SEJOWOO_TUTORLMS_DIR . 'third-parties/yahnis-elsts/plugin-update-checker/plugin-update-checker.php');
+
+$update_checker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/orangerdev/sejowoo-tutorlms',
+	__FILE__,
+	'sejowoo-tutorlms'
+);
+
+$update_checker->setBranch('master');
+
 run_sejowoo_tutorlms();
